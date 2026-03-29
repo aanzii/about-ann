@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>王辰安｜高階主管履歷</title>
+  <style>
+    :root {
+      --bg: #f3f5f7;
+      --surface: #ffffff;
+      --surface-2: #f7f9fb;
+      --ink: #1b2430;
+      --muted: #627082;
+      --line: #dbe3ea;
+      --accent: #1f3b63;
+      --accent-2: #4f698b;
+      --gold: #b38a53;
+      --shadow: 0 16px 38px rgba(16,24,40,.07);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #eff3f6 0%, #f7f8fa 100%);
+      line-height: 1.8;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(27,36,48,.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .brand {
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 800;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid rgba(27,36,48,.08);
+      border-radius: 999px;
+      background: rgba(255,255,255,.92);
+      padding: 8px 12px;
+      transition: .2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+      border-color: rgba(31,59,99,.22);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 40px 0 24px;
+    }
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(249,250,252,.98));
+      border: 1px solid rgba(27,36,48,.08);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 30px;
+      padding: 34px;
+      align-items: start;
+    }
+    .avatar-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .avatar {
+      width: 220px;
+      height: 220px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(27,36,48,.08);
+      box-shadow: 0 14px 30px rgba(16,24,40,.1);
+      background: #dce8ef;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid rgba(27,36,48,.08);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .eyebrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eef3f7;
+      border: 1px solid rgba(27,36,48,.08);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .pill:hover {
+      transform: translateY(-1px);
+      background: #f7fafc;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+    .subtitle {
+      margin-top: 10px;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.45;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .meta {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .meta span {
+      position: relative;
+      padding-right: 12px;
+    }
+    .meta span:not(:last-child)::after {
+      content: "•";
+      position: absolute;
+      right: -1px;
+      color: #a8b3bf;
+    }
+    .summary {
+      margin-top: 22px;
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #f7f9fb, #f2f6f9);
+      border: 1px solid var(--line);
+    }
+    .summary p {
+      margin: 0;
+      font-size: 18px;
+    }
+    .quick-points {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .point {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-size: 15px;
+      color: var(--muted);
+      box-shadow: 0 8px 18px rgba(16,24,40,.04);
+    }
+    .point strong { color: var(--ink); }
+
+    .section {
+      padding: 26px 0;
+    }
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: -0.03em;
+    }
+    .section-title .note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr 1fr;
+      gap: 18px;
+    }
+    .photo-card {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid rgba(27,36,48,.08);
+      box-shadow: 0 12px 28px rgba(16,24,40,.05);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .photo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(16,24,40,.08);
+    }
+    .photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      background: #edf2f5;
+    }
+    .photo-card:nth-child(1) img { object-position: center center; }
+    .photo-card:nth-child(2) img { object-position: center 30%; }
+    .photo-card:nth-child(3) img { object-position: center center; }
+    .photo-card figcaption {
+      display: grid;
+      gap: 6px;
+      padding: 18px;
+    }
+    .photo-card strong {
+      font-size: 18px;
+      line-height: 1.35;
+    }
+    .photo-card span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .skill-card {
+      position: relative;
+      padding: 24px 22px 22px;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid rgba(27,36,48,.08);
+      box-shadow: 0 10px 24px rgba(16,24,40,.05);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .skill-card::before {
+      content: "";
+      position: absolute;
+      left: 22px;
+      top: 0;
+      width: 92px;
+      height: 5px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--gold));
+    }
+    .skill-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(16,24,40,.08);
+    }
+    .skill-card h3 {
+      margin: 12px 0 12px;
+      font-size: 24px;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .skill-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .skill-card li + li { margin-top: 10px; }
+
+    .timeline {
+      position: relative;
+      padding-left: 26px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(31,59,99,.35), rgba(179,138,83,.18));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 22px;
+      padding: 26px;
+      border-radius: 28px;
+      background: var(--surface);
+      border: 1px solid rgba(27,36,48,.08);
+      box-shadow: 0 12px 30px rgba(16,24,40,.05);
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 30px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      border: 4px solid #f4f6f8;
+      box-shadow: 0 0 0 3px rgba(31,59,99,.08);
+    }
+    .job-top {
+      display: grid;
+      grid-template-columns: 1.03fr 1.37fr;
+      gap: 24px;
+    }
+    .date {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .role {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3vw, 33px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .company {
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .job-badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 16px;
+      background: #eef3f8;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .job-intro {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .job-block {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+    .job-block h4 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: .02em;
+      color: var(--accent);
+    }
+    .job-block ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .job-block li + li { margin-top: 10px; }
+    .job-block strong { color: var(--ink); }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .tag {
+      font-size: 12px;
+      color: var(--muted);
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #fafbfd;
+      border: 1px solid var(--line);
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .edu-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 1px solid rgba(27,36,48,.08);
+      box-shadow: 0 10px 24px rgba(16,24,40,.05);
+    }
+    .edu-card h3 { margin: 0 0 8px; font-size: 24px; }
+    .edu-card p { margin: 0; color: var(--muted); font-size: 17px; }
+    .edu-card .year { margin-top: 10px; color: var(--muted); font-size: 14px; font-weight: 700; }
+
+    .footer {
+      padding: 30px 0 60px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .job-top,
+      .photo-grid,
+      .expertise-grid,
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+      .quick-points { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .nav-inner { flex-direction: column; align-items: flex-start; }
+      .hero-grid { padding: 24px; gap: 22px; }
+      .avatar { width: 180px; height: 180px; }
+      .timeline { padding-left: 20px; }
+      .timeline-item { padding: 20px; }
+      .timeline-item::before { left: -20px; }
+      .role { font-size: 24px; }
+      .summary p { font-size: 16px; }
+      .photo-card img { height: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Executive Resume · 王辰安</div>
+      <div class="nav-links">
+        <a href="#hero">首頁</a>
+        <a href="#work-photos">工作側寫</a>
+        <a href="#expertise">專長</a>
+        <a href="#experience">工作經歷</a>
+        <a href="#education">學歷</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero">
+    <div class="container">
+      <div class="hero-card reveal in-view">
+        <div class="hero-grid">
+          <div class="avatar-wrap">
+            <div class="avatar">
+              <img src="./assets/images/profile.JPG" alt="王辰安大頭照" />
+            </div>
+            <div class="contact-chip">15 年工作經驗</div>
+          </div>
+
+          <div>
+            <div class="eyebrow">
+              <span class="pill">品牌策略</span>
+              <span class="pill">整合行銷</span>
+              <span class="pill">品牌公關</span>
+              <span class="pill">會員成長營運</span>
+            </div>
+
+            <h1>王辰安</h1>
+            <div class="subtitle">品牌公關暨 B2B 行銷經理｜PR &amp; B2B Marketing Manager</div>
+
+            <div class="meta">
+              <span>曾任職兩家上市櫃科技公司</span>
+              <span>科技／電競遊戲／零售／寵物／資訊服務</span>
+              <span>品牌策略 × 品牌公關 × 成長營運</span>
+            </div>
+
+            <div class="summary">
+              <p>
+                曾任職兩家上市櫃科技公司，具 <strong>15 年工作經驗</strong>，歷練涵蓋科技、電競遊戲、零售、寵物與資訊服務／B2B 平台領域。累積品牌行銷、電商營運到產品市場化與會員成長營運等完整實戰經驗，現聚焦於 <strong>品牌策略、品牌公關與解決方案市場化</strong>，並具 <strong>團隊管理、跨部門整合與成長推進</strong> 能力。
+              </p>
+            </div>
+
+            <div class="quick-points">
+              <div class="point"><strong>產業跨度：</strong>科技 IT、消費性電子、電競遊戲、零售服飾、寵物品牌、B2B 雲端平台</div>
+              <div class="point"><strong>關鍵經歷：</strong>品牌推廣、電商營運、產品市場化、會員分群、AEO／SEO、CDP 導入</div>
+              <div class="point"><strong>管理經驗：</strong>曾帶領 8–10 人團隊，具跨部門專案推進與對外溝通協調能力</div>
+              <div class="point"><strong>適合角色：</strong>品牌行銷主管、品牌公關主管、行銷總監、顧問型職缺</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="work-photos" class="section">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>工作側寫</h2>
+        <div class="note">以實際活動、對談與簡報現場，補足履歷中的溝通風格與領導氣質</div>
+      </div>
+      <div class="photo-grid">
+        <figure class="photo-card reveal">
+          <img src="./assets/images/work-01.jpg" alt="對談與錄音工作照" />
+          <figcaption>
+            <strong>對談與內容合作</strong>
+            <span>擅長以自然互動與議題整理，將品牌訊息轉化為可被理解、可被傳播的內容場景。</span>
+          </figcaption>
+        </figure>
+        <figure class="photo-card reveal">
+          <img src="./assets/images/work-02.JPG" alt="論壇發言工作照" />
+          <figcaption>
+            <strong>論壇與品牌溝通現場</strong>
+            <span>具備對外發言、活動溝通與品牌表達能力，能兼顧專業度與現場互動感。</span>
+          </figcaption>
+        </figure>
+        <figure class="photo-card reveal">
+          <img src="./assets/images/work-03.JPG" alt="簡報分享工作照" />
+          <figcaption>
+            <strong>簡報與策略分享</strong>
+            <span>可從策略、內容到提案結構進行整合，將複雜資訊轉化為清楚且具說服力的表達。</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise" class="section">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>專長</h2>
+        <div class="note">聚焦品牌主管、品牌公關與顧問型職涯方向</div>
+      </div>
+
+      <div class="expertise-grid">
+        <article class="skill-card reveal">
+          <h3>品牌策略與整合行銷</h3>
+          <ul>
+            <li>品牌定位與整合行銷規劃</li>
+            <li>年度策略、預算與資源配置</li>
+            <li>多通路導流與轉換優化</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3>品牌公關與信任經營</h3>
+          <ul>
+            <li>媒體溝通與新聞稿撰寫</li>
+            <li>KOL／異業／品牌合作整合</li>
+            <li>品牌信任與口碑經營</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3>會員經營與成長營運</h3>
+          <ul>
+            <li>會員分群與成長策略</li>
+            <li>CDP 導入與數據應用</li>
+            <li>名單培育與會員溝通優化</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3>內容策略與搜尋導流</h3>
+          <ul>
+            <li>AEO／SEO 內容規劃</li>
+            <li>官網內容與成功案例包裝</li>
+            <li>社群議題與品牌訊息整合</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3>產品行銷與市場化整合</h3>
+          <ul>
+            <li>GTM / Solution Packaging</li>
+            <li>電商檔期與導購企劃</li>
+            <li>OMO 新零售整合</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3>數據分析與團隊管理</h3>
+          <ul>
+            <li>數據分析與成效優化</li>
+            <li>跨部門專案管理</li>
+            <li>團隊帶領與顧問式溝通</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>工作經歷</h2>
+        <div class="note">職涯路徑：品牌與電商基礎 → 管理與 OMO 整合 → 品牌／產品市場化 → B2B 平台成長</div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="job-top">
+            <div>
+              <div class="date">2024/09－仍在職</div>
+              <h3 class="role">品牌公關暨 B2B 行銷經理｜PR &amp; B2B Marketing Manager</h3>
+              <div class="company">采威國際資訊股份有限公司（電腦軟體服務業 100～500 人）</div>
+              <div class="job-badge">聚焦 B2B 雲端平台之會員經營、成長營運與解決方案市場化，串聯內容、搜尋導流、分群溝通與業務承接。</div>
+              <p class="job-intro">負責公司及旗下 B2B 雲端市集平台之會員經營、整合行銷與成長推進，涵蓋解決方案包裝、CDP 會員分群、內容策略、搜尋導流、活動推廣、媒體溝通與業務承接協作。</p>
+            </div>
+            <div>
+              <div class="job-block">
+                <h4>工作內容</h4>
+                <ul>
+                  <li>規劃 B2B 雲端平台之會員經營與整合行銷策略，串聯品牌、官網、內容、EDM、社群、活動與商機導流。</li>
+                  <li>負責 B2B SaaS／雲端平台之市場溝通與 GTM 推進，依產品特性與受眾需求設計外訊息與推廣節奏。</li>
+                  <li>統籌官網內容、新聞稿、論壇／展會活動、會後名單經營與多通路整合操作，提升平台曝光與互動。</li>
+                  <li>統籌 CDP 導入與會員分群應用規劃，結合內容、EDM、行為追蹤與成效指標設計，持續優化會員經營與成長推進機制。</li>
+                </ul>
+              </div>
+              <div class="job-block">
+                <h4>成果</h4>
+                <ul>
+                  <li>整合官網、EDM、社群、公關活動、展會、論壇與合作夥伴等通路，帶動 <strong>會員數由 1,800 成長至 2,800，增幅約 56%</strong>。</li>
+                  <li>規劃並執行平台 AEO / SEO 成長策略，將 <strong>官網自然搜尋週平均流量由約 1,000 提升至 3,000</strong>，成長至原本 3 倍。</li>
+                  <li>統籌 CDP 導入與會員分群機制建置，並導入 AI 輔助內容生產方法，建立可持續優化的會員營運基礎。</li>
+                  <li>推進 <strong>10 項 B2B 解決方案市場化包裝</strong>，將產品功能轉譯為產業痛點、應用情境、導入價值與成功案例。</li>
+                  <li>推動 Google 評價優化與品牌信任專案，半年內將公司評分由 <strong>4.1 提升至 4.6</strong>，強化搜尋場景中的信任感。</li>
+                </ul>
+              </div>
+              <div class="tags">
+                <span class="tag">#B2B 會員經營</span>
+                <span class="tag">#Growth Marketing</span>
+                <span class="tag">#CDP</span>
+                <span class="tag">#AEO / SEO</span>
+                <span class="tag">#Solution Packaging</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="job-top">
+            <div>
+              <div class="date">2023/02－2024/05｜1 年 4 個月</div>
+              <h3 class="role">品牌行銷暨產品經理｜Brand Marketing &amp; Product Management</h3>
+              <div class="company">極寵有限公司（寵物相關服務業 30～100 人）</div>
+              <div class="job-badge">聚焦品牌成長、產品市場化與 KOL／社群擴散，從內容溝通到新品上市推進品牌聲量與商品能見度。</div>
+              <p class="job-intro">負責品牌行銷、產品推廣與新品開發管理，涵蓋社群內容、廣告素材企劃、KOL 合作、展會活動、原廠溝通與產品上市推進，協助提升品牌聲量、產品能見度與銷售表現。</p>
+            </div>
+            <div>
+              <div class="job-block">
+                <h4>工作內容</h4>
+                <ul>
+                  <li>規劃品牌與產品整合行銷策略，透過社群、內容、廣告素材企劃與活動推廣提升品牌知名度與商品曝光。</li>
+                  <li>負責廣告溝通方向、素材發想、商品頁文案、銷售頁內容與相關行銷素材規劃，並與投放同事協作執行。</li>
+                  <li>擔任國外代理品牌窗口，與原廠溝通市場狀況、銷售表現與後續策略，協助在地化行銷推進。</li>
+                  <li>與開發團隊協作新品開發流程，參與市調、產品定位、價格策略、包裝規劃與上市訴求設計。</li>
+                </ul>
+              </div>
+              <div class="job-block">
+                <h4>成果</h4>
+                <ul>
+                  <li>從 0 建立品牌 Instagram，<strong>10 個月內累積 7,000 位粉絲</strong>。</li>
+                  <li><strong>1 個月內整合 10 位近百萬級 KOL</strong>，推動品牌公益聯名活動，擴大品牌聲量與社群曝光。</li>
+                  <li>規劃年度寵物展參展與攤位體驗設計，相關畫面曝光於 <strong>蔡英文 YouTube 影片封面</strong>。</li>
+                  <li>推動品牌行銷、內容與活動整合，帶動 <strong>銷售業績年增 20%</strong>。</li>
+                  <li>負責 <strong>3 項產品開發與上市推進</strong>，建立較完整的產品上市流程。</li>
+                </ul>
+              </div>
+              <div class="tags">
+                <span class="tag">#品牌行銷</span>
+                <span class="tag">#產品行銷</span>
+                <span class="tag">#KOL 合作</span>
+                <span class="tag">#新品上市</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="job-top">
+            <div>
+              <div class="date">2021/03－2022/08｜1 年 6 個月</div>
+              <h3 class="role">行銷副理｜Marketing Manager</h3>
+              <div class="company">MO-BO_米果服飾開發有限公司（鞋類／布類／服飾品零售業 100～500 人）</div>
+              <div class="job-badge">主導品牌行銷、電商營運與 OMO 新零售整合，並帶領團隊推進跨通路營運與品牌一致性建設。</div>
+              <p class="job-intro">負責品牌行銷、電商營運與 OMO 新零售整合，涵蓋年度策略與預算規劃、數位推廣、社群經營、KOL 合作、門市活動、品牌識別推動與跨部門專案管理。</p>
+            </div>
+            <div>
+              <div class="job-block">
+                <h4>工作內容</h4>
+                <ul>
+                  <li>制定年度行銷策略與預算，統籌品牌推廣、檔期活動與跨部門協作，推進營運目標。</li>
+                  <li>負責官網、百貨與門市整合營運，規劃檔期活動、商品推廣、庫存協作與通路溝通。</li>
+                  <li>規劃快閃活動、KOL 合作與異業合作，擴大品牌曝光並創造實體互動話題。</li>
+                  <li>建立品牌 OMO 經營模式，串聯線上線下消費接觸點，導入新零售系統與相關流程建置，帶領 <strong>8–10 人團隊</strong> 推進執行。</li>
+                </ul>
+              </div>
+              <div class="job-block">
+                <h4>成果</h4>
+                <ul>
+                  <li>主導品牌 <strong>OMO 系統導入與上線</strong>，完成新零售營運流程建置。</li>
+                  <li>規劃直播導購與 KOL 合作內容，創造 <strong>直播 1 小時銷售 300 件商品</strong> 的成果。</li>
+                  <li>建立品牌識別系統，提升品牌視覺一致性與市場辨識度。</li>
+                  <li>完成部門團隊重整與分工優化，提升專案執行效率與跨部門協作順暢度。</li>
+                </ul>
+              </div>
+              <div class="tags">
+                <span class="tag">#OMO 新零售</span>
+                <span class="tag">#電商營運</span>
+                <span class="tag">#直播導購</span>
+                <span class="tag">#團隊管理</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="job-top">
+            <div>
+              <div class="date">2016/05－2021/02｜4 年 10 個月</div>
+              <h3 class="role">通路行銷／行銷主管／全球產品行銷｜Channel Marketing / Marketing Manager / Global Product Marketing</h3>
+              <div class="company">圓剛科技股份有限公司（消費性電子產品製造業 100～500 人）</div>
+              <div class="job-badge">聚焦科技品牌成長、電商導購與跨區市場推進，具中國市場整合行銷與國際產品上市協作經驗。</div>
+              <p class="job-intro">歷任通路行銷、行銷主管與全球產品行銷相關職務，負責品牌行銷、數位推廣、電商通路經營、中國市場整合行銷與全球產品上市推進。</p>
+            </div>
+            <div>
+              <div class="job-block">
+                <h4>工作內容</h4>
+                <ul>
+                  <li>規劃品牌行銷策略與預算，統籌數位推廣、媒體公關、KOL 合作及官網與社群內容經營。</li>
+                  <li>負責電商通路行銷與檔期活動推進，涵蓋台灣 <strong>PChome、momo、良興、原價屋、欣亞</strong> 及中國 <strong>京東、天貓、淘寶</strong> 等平台。</li>
+                  <li>主導中國市場整合行銷與電商營運，帶領 <strong>4 人團隊</strong> 推進在地化行銷。</li>
+                  <li>負責電競產品全球上市時程與跨區行銷協作。</li>
+                </ul>
+              </div>
+              <div class="job-block">
+                <h4>成果</h4>
+                <ul>
+                  <li>透過時事行銷操作，帶動 <strong>Google Trends 單月成長 400%</strong>。</li>
+                  <li>推動官網內容與導流優化，帶動 <strong>官網總流量成長 165%</strong>。</li>
+                  <li>優化產品導購策略，帶動 <strong>官網單品流量成長 300%、業績成長 192%</strong>。</li>
+                  <li>統籌中國市場整合行銷與電商推進，整合京東、天貓、淘寶等平台資源。</li>
+                  <li>負責電競產品全球上市推進，提升跨區溝通與上市協作效率。</li>
+                </ul>
+              </div>
+              <div class="tags">
+                <span class="tag">#科技品牌行銷</span>
+                <span class="tag">#電商導購</span>
+                <span class="tag">#中國市場行銷</span>
+                <span class="tag">#全球產品上市</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="job-top">
+            <div>
+              <div class="date">2015/03－2016/05｜1 年 3 個月</div>
+              <h3 class="role">國內業務</h3>
+              <div class="company">浩鑫股份有限公司（電腦及其週邊設備製造業 100～500 人）</div>
+              <div class="job-badge">聚焦教育市場、公部門與企業客戶開發，累積通路拓展、市場洞察與第一線客戶溝通經驗。</div>
+            </div>
+            <div>
+              <div class="job-block">
+                <ul>
+                  <li>負責教育市場、公家機關及企業客戶之通路開發與客戶維繫，建立 B2B 銷售與需求溝通基礎。</li>
+                  <li>進行市場調查與需求分析，協助銷售策略與產品定價規劃，強化市場端對產品定位的理解。</li>
+                  <li>執行產品教育訓練、客戶簡報與展會支援，包含 COMPUTEX、教育展等活動之接待、解說與現場推廣。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="job-top">
+            <div>
+              <div class="date">2011/06－2015/03｜3 年 10 個月</div>
+              <h3 class="role">業務專員</h3>
+              <div class="company">漢珍數位圖書（數位內容產業 30～100 人）</div>
+              <div class="job-badge">聚焦教育市場與公部門專案推廣，累積客戶教育、專案協調與長期關係經營經驗。</div>
+            </div>
+            <div>
+              <div class="job-block">
+                <ul>
+                  <li>負責教育市場與公家機關之資料庫與電子書產品推廣，執行客戶開發、維繫與專案型銷售合作。</li>
+                  <li>提供產品教育訓練、需求訪談與推廣支援，參與教育專案承接與後續導入服務。</li>
+                  <li>整理分析資料與專案建議，協助主管決策與跨部門溝通，並負責國外原廠來訪接待與往來協調。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>學歷</h2>
+        <div class="note">保留雙學系歷程，凸顯商業與資訊背景</div>
+      </div>
+      <div class="edu-grid">
+        <article class="edu-card reveal">
+          <h3>私立輔仁大學</h3>
+          <p>金融與國際企業學系｜大學畢業</p>
+          <div class="year">2007/09－2011/06</div>
+        </article>
+        <article class="edu-card reveal">
+          <h3>私立輔仁大學</h3>
+          <p>圖書資訊學系｜大學畢業</p>
+          <div class="year">2007/09－2011/06</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">High-level Executive Resume · polished, structured, and presentation-ready</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
